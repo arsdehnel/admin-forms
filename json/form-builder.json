@@ -1,0 +1,49 @@
+<?php
+	sleep(1);
+?>
+{
+"columns" : [
+      {
+        "name" : "promotion_id",
+        "label" : "Promotion",
+        "type" : "select2",
+        "data" : [
+          {
+            "value" : "3130",
+            "label" : "Direct Mail"
+          },
+          {
+            "value" : "3131",
+            "label" : "Dealer Cash",
+            "helpText" : "This is some help text"
+          },
+          {
+            "value" : "3132",
+            "label" : "Another one"
+          }
+        ]
+      },
+      {
+        "name" : "page_code",
+        "label" : "Page",
+        "type" : "select2",
+        "inputClass" : "submit-on-change",
+        "data" : [
+          {
+            "value" : "CLAIM_FORM",
+            "label" : "Claim Form"
+          },
+          {
+            "value" : "CONF_PAGE",
+            "label" : "Confirmation Page",
+            "helpText" : "The page that shows after you've submitted your claim"
+          },
+          {
+            "value" : "PDF_CERT",
+            "label" : "PDF / Certificate"
+          }
+        ]
+      }
+    ]
+
+}

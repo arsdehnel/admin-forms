@@ -1,0 +1,42 @@
+<?php
+    $header_text = 'Form Builder';
+    $main_classes[] = 'layout-grid';
+    include('_header.php');
+?>
+	<div class="row auto-admin-onload-ajax" data-onload-ajax-url="json/form-builder.json" data-onload-ajax-result-type="form" data-onload-ajax-target-id="form-builder">
+        <div class="layout-grid-6">
+	        <fieldset>
+	            <legend>Your Form</legend>
+	            <form action="html/form-builder-current.html" class="form-horizontal" method="post" id="form-builder" data-target-id="form-builder-current" data-result-type="html"></form>
+				<div id="form-builder-current" class="hide"></div>
+	        </fieldset>
+        </div>
+        <fieldset class="layout-grid-6">
+            <legend>Available Form Fields</legend>
+            <div class="btn-group">
+            	<a href="javascript:alert('Open modal to give parameters');" class="btn">copy from another promotion</a>
+            </div>
+            <form action="html/form-builder-options.html" class="form-horizontal" method="post" id="form-builder-option-filters" data-target-id="form-builder-options" data-result-type="html"></form>
+			<div id="form-builder-options" class="hide"></div>
+        </fieldset>
+    </div>
+
+<ul class="to-do">
+</ul>
+<script>
+	$(function(){
+
+		$('body').on('click','.dnd-details-toggle',function(){
+			$(this)
+				.toggleClass('icon-closed icon-open')
+				.closest('.dnd-item')
+				.find('.dnd-details')
+				.toggleClass('hide');
+		})
+
+	})
+</script>
+
+<?php
+    include('_footer.php');
+?>
