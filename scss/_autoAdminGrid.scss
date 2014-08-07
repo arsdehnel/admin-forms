@@ -1,0 +1,240 @@
+.auto-admin-grid-wrapper{
+	position: relative;
+}
+.auto-admin-grid{
+  margin: 0 1em;
+  width: calc( 100% - 2em );
+  border: solid #999;
+  border-width: 1px 0 0 1px;
+  box-shadow: 0 0 12px #aaa;
+  border-radius: 2px;
+  th,
+  td{
+    position: relative;
+    text-align: center;
+    padding: 4px 0;
+    &[data-column-select-priority="2"],
+    &[data-column-select-priority="3"],
+    &[data-column-select-priority="4"]{
+      display: none;
+    }
+    @include breakpoint( mama-bear ){
+      &[data-column-select-priority="2"]{
+        display: table-cell;
+      }
+    }
+    @include breakpoint( papa-bear ){
+      &[data-column-select-priority="3"]{
+        display: table-cell;
+      }
+    }
+  }
+  thead{
+    th{
+      font-size: 14px;
+      border: solid #999;
+      border-width: 0 1px 1px 0;
+      padding: .5em 1em;
+      @include linear-gradient( tint( $header-bg-color , 20% ), $header-bg-color );
+      color: white;
+      .auto-admin-filter-trigger{
+        font-family: 'FontAwesome';
+        font-style: normal;
+        font-weight: normal;
+      }
+      .auto-admin-filter-data{
+        @include dropdown();
+        top: 100%;
+        right: 0;
+      }
+      .auto-admin-grid-header-cell-triggers{
+        position: absolute;
+        right: .5em;
+      }
+		.icon-tooltip{
+		    position: absolute;
+		    top: .1em;
+		    right: .1em;
+		    height: 1em;
+		    width: 1em;
+		    &:before{
+		    	content: "\f059";
+		    	display: block;
+		    	position: absolute;
+		    	top: 0;
+		    	left: 0;
+		    	width: 100%;
+		    	text-align: center;
+		    }
+		}
+
+    }
+  }
+  tbody{
+    .current:nth-child(odd) td{
+      @include linear-gradient( tint( $body-bg-color-current , 40% ), $body-bg-color-current );
+      box-shadow: inset 0 0 0 1px $body-bg-color-current;
+    }
+    .current:nth-child(even) td{
+      @include linear-gradient( shade( $body-bg-color-current , 10% ), shade( $body-bg-color-current, 30% ) );
+      box-shadow: inset 0 0 0 1px shade( $body-bg-color-current, 30% );
+    }
+    .added:nth-child(odd) td{
+      @include linear-gradient( tint( $body-bg-color-added , 60% ), $body-bg-color-added );
+      box-shadow: inset 0 0 0 1px $body-bg-color-added;
+    }
+    .added:nth-child(even) td{
+      @include linear-gradient( shade( $body-bg-color-added , 10% ), shade( $body-bg-color-added, 30% ) );
+      box-shadow: inset 0 0 0 1px shade( $body-bg-color-added, 30% );
+    }
+    .updated:nth-child(odd) td{
+      @include linear-gradient( tint( $body-bg-color-updated , 40% ), $body-bg-color-updated );
+      box-shadow: inset 0 0 0 1px $body-bg-color-updated;
+    }
+    .updated:nth-child(even) td{
+      @include linear-gradient( shade( $body-bg-color-updated , 10% ), shade( $body-bg-color-updated, 20% ) );
+      box-shadow: inset 0 0 0 1px shade( $body-bg-color-updated, 20% );
+    }
+    .error:nth-child(odd) td{
+      @include linear-gradient( tint( $body-bg-color-error , 40% ), $body-bg-color-error );
+      box-shadow: inset 0 0 0 1px $body-bg-color-error;
+    }
+    .error:nth-child(even) td{
+      @include linear-gradient( shade( $body-bg-color-error , 10% ), shade( $body-bg-color-error, 20% ) );
+      box-shadow: inset 0 0 0 1px shade( $body-bg-color-error, 20% );
+    }
+    .current{
+      .action-save,
+      .action-revert{
+        display: none;
+      }
+    }
+    .processing{
+      .action{
+        display: none;
+      }
+    }
+    .added{
+      *[data-header-id="id"] span{
+        display: none;
+      }
+      .action-revert,
+      .action-clone{
+        display: none;
+      }
+    }
+    .updated{
+      .action-clone{
+        display: none;
+      }
+    }
+  }
+  .auto-admin-cell-actions{
+    white-space: nowrap;
+    font-size: 0;
+    position: relative;
+    .auto-admin-grid-row-messages{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 100%;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 3px;
+      color: black;
+      overflow: hidden;
+      &.success{
+        border: 1px solid $body-bg-color-success;
+        @include linear-gradient( tint( $body-bg-color-success, 90% ), tint( $body-bg-color-success, 70% ) );
+      }
+      &.error{
+        border: 1px solid $body-bg-color-error;
+        @include linear-gradient( tint( $body-bg-color-error, 90% ), tint( $body-bg-color-error, 70% ) );
+      }
+      &.info{
+        border: 1px solid $body-bg-color-info;
+        @include linear-gradient( tint( $body-bg-color-info, 90% ), tint( $body-bg-color-info, 70% ) );
+      }
+      &.warning{
+        border: 1px solid $body-bg-color-warning;
+        @include linear-gradient( tint( $body-bg-color-warning, 90% ), tint( $body-bg-color-warning, 70% ) );
+      }
+    }
+  }
+}
+
+// for the header cell filters
+.grid-header-filter.dropdown-wrapper{
+	position: absolute;
+	margin: 0;
+	right: 0;
+	bottom: 0;
+    height: 1em;
+    width: 1em;
+    .dropdown-label{
+    	display: none;
+    }
+	.dropdown-toggle{
+		height: 1em;
+		width: 1em;
+		padding: 0;
+	 	background: linear-gradient( to top, #ccc, white );
+		color: black;
+	}
+    .dropdown-menu{
+        top: 1em;
+    }
+}
+
+// for the "grid level" drop downs that show to the top right of the grid
+.auto-admin-grid-wrapper > .dropdown-wrapper{
+	position: relative;
+	margin-right: 2em;
+	float: right;
+	&::before{
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		transform: perspective( 50px ) rotateX( 20deg );
+		background: linear-gradient( to top, tint( $primary_color, 20% ), tint( $primary_color, 50% ) );
+      	box-shadow: inset 0 1px 0 0 #bbb;
+	}
+}
+
+// for the overlays
+.auto-admin-grid-overlay-editor {
+    position: relative;
+    .display-value{
+    	z-index: 0;
+    	position: relative;
+    }
+    .overlay-editor {
+		display: none;
+	    position: absolute;
+	    top: 100%;
+	    z-index: $zindex-overlay;
+	    background: white;
+	    width: 800px;
+	    left: calc( 50% - 400px );
+	    padding: 1em;
+	    border-radius: 4px;
+	    box-shadow: 0 12px 12px 2px #666;
+	}
+	&.open{
+		.display-value {
+			z-index: $zindex-overlay;
+		    background: #ddd;
+		    border-radius: 4px 4px 0 0;
+		    margin: 0 1em;
+		    border: 1px solid #999;
+		    border-bottom-width: 0;
+		}
+		.overlay-editor{
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,48 @@
+{
+    "records" : [
+      {
+        "prcs_code" : "VIN_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "TTL_AWD_CALC_05",
+        "calc_operator" : "SUM",
+        "data_lkup_dtl" : "2 data types (PMA_AWD_CALC_05, SA_ATTNMT_AWD_05)"
+      },
+      {
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "RECOG_RPTNG_DATA",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "SA_ATTNMT_AWD_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      }
+
+    ]
+}

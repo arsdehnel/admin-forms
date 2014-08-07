@@ -1,0 +1,212 @@
+<?php
+	sleep(1);
+?>
+{
+    "columns" : [
+      {
+        "name" : "id",
+        "label" : "ID",
+        "columnSelectPriority" : "3",
+        "type" : "readonly",
+        "readonly" : true
+      },
+      {
+        "name" : "prcs_name",
+        "label" : "Process",
+        "tooltip" : "This is the actual name of the process in the database",
+        "columnSelectPriority" : "1",
+        "type" : "select2",
+        "readonly" : true
+      },
+      {
+        "name" : "read_order",
+        "label" : "Read Order",
+        "tooltip" : "Just used for controlling what order the jobs show up in this screen.",
+        "columnSelectPriority" : "2",
+        "type" : "number",
+        "readonly" : true
+      },
+      {
+        "name" : "status_code",
+        "label" : "Status Code",
+        "tooltip" : "Indicates whether this data type should be calculated right now or not.  Depending on the program the inactivation of this might cause the existing data to be removed whereas other programs might just leave that data as it is and simply will stop updating it.",
+        "columnSelectPriority" : "1",
+        "type" : "select",
+        "readonly" : true,
+        "data" : [
+          {
+            "value" : "A",
+            "label" : "Active"
+          },
+          {
+            "value" : "I",
+            "label" : "Inactive"
+          }
+        ]
+      },
+      {
+        "name" : "comments",
+        "label" : "Comments",
+        "tooltip" : "Just for reference by you and other team members, this will not be used in any programming or display on the web.",
+        "columnSelectPriority" : "4",
+        "type" : "textarea",
+        "readonly" : true
+      },
+      {
+        "name" : "actions",
+        "label" : "Actions",
+        "cellClass" : "auto-admin-cell-actions",
+        "tooltip" : "This is the name of what we're actually doing (summing, dividing, multiplying, etc.) once we have all the values and we've determined we need to do this data type for this period and whatnot.",
+        "columnSelectPriority" : "0",
+        "type" : "actions",
+        "data" : [
+          {
+            "href" : "#",
+            "type" : "edit",
+            "label" : "Edit"
+          },
+          {
+            "href" : "html/job-submission-run.html",
+            "type" : "run",
+            "label" : "Run",
+            "actionClass" : "load-on-click",
+	        "dataAttributes" : [
+	            {
+	                "name" : "load-on-click-target-id",
+	                "value" : "job-submission-grid"
+	            },
+	            {
+	                "name" : "result-type",
+	                "value" : "html"
+	            }
+	        ]
+          },
+          {
+            "href" : "#",
+            "type" : "inactivate",
+            "label" : "Inactivate"
+          }
+        ]
+      }
+    ],
+    "records" : [
+      {
+        "id" : 13,
+        "prcs_name" : "VIN_DTL",
+        "read_order" : "13",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "SUM"
+      },
+      {
+        "id" : 14,
+        "prcs_name" : "DATA_DTL",
+        "read_order" : 14,
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 15,
+        "prcs_name" : "DATA_DTL",
+        "read_order" : "15",
+        "data_type" : "SA_ATTNMT_AWD_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 16,
+        "prcs_name" : "DATA_DTL",
+        "read_order" : "16",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 17,
+        "prcs_name" : "DATA_DTL",
+        "read_order" : "17",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 18,
+        "prcs_name" : "DATA_DTL",
+        "read_order" : "18",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 19,
+        "prcs_name" : "DATA_DTL",
+        "read_order" : "19",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      }
+
+    ],
+    "gridActions" : [
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 1 Record",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "1"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 2 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "2"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 3 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "3"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 4 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "4"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 5 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "5"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 10 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "10"
+	            }
+	        ]
+		}
+	]
+}

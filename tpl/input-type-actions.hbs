@@ -1,0 +1,12 @@
+  {{#each data}}
+    <a
+    	href="{{href}}"
+    	class="btn action {{actionClass}} icon icon-{{type}}"
+    	data-action-type="{{type}}"
+    	title="{{type}}"
+	    {{#each dataAttributes}}
+	        data-{{name}}="{{value}}"
+	    {{/each}}
+    >{{{label}}}</a>
+  {{/each}}
+  <div class="auto-admin-grid-row-messages"></div>

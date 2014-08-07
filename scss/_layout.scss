@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-image: radial-gradient(farthest-corner at 50% 140% , #ffffff 0%, $primary_color 100%);
+    background-attachment: fixed;
+    font-size: 14px;
+    font-family: 'Lato';
+}
+.content{
+    margin: 4px 20px;
+    background: #eee;
+    min-height: 800px;
+}

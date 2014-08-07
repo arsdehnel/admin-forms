@@ -1,0 +1,31 @@
+{{#if html_prefix}}
+	<div class="form-row row">
+		<div class="grid-spacer layout-grid-3">&nbsp;</div>
+		<div class="form-input-notes layout-grid-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, placeat!</div>
+	</div>
+{{/if}}
+<div
+    class="form-row row {{wrapClass}}"
+    id="{{wrapId}}"
+    {{#each jsHooks}}
+        data-hook-{{hook}}="{{type}}"
+    {{/each}}
+    {{#each dataAttributes}}
+        data-{{name}}="{{value}}"
+    {{/each}}
+    >
+
+    <label for="p_in_promo_id" class="layout-grid-3">{{label}}</label>
+    <div class="form-input layout-grid-6 layout-grid">
+        {{{inputField}}}
+        {{#if tooltip}}
+            <span class="form-input-addon form-tooltip tooltip-icon-inline">?<span class="tooltip">{{{tooltip}}}</tooltip></span>
+        {{/if}}
+    </div>
+</div>
+{{#if html_suffix}}
+	<div class="form-row row">
+		<div class="grid-spacer layout-grid-3">&nbsp;</div>
+		<div class="form-input-notes layout-grid-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, placeat!</div>
+	</div>
+{{/if}}

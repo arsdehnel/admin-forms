@@ -1,0 +1,133 @@
+.nav-header{
+    position: relative;
+    background: rgba( 255, 255, 255, .7);
+    text-align: center;
+    ul,
+    li{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    li{
+        &.has-children:after{
+            position: absolute;
+            display: block;
+            font-family: "FontAwesome";
+            color: tint( $primary_color, 50% );
+            font-size: 12px;
+        }
+        &:hover.has-children:after{
+            display: none;
+        }
+    }
+    a{
+        display: block;
+        margin: .25em;
+        padding: .5em 1em;
+        color: $primary_color;
+        text-transform: uppercase;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+    .nav-level--1{
+        display: flex;
+        justify-content: space-around;
+    }
+    .nav-level--2{
+        top: 100%;
+        width: 200%;
+        z-index: $zindex-nav;
+    }
+    .nav-level--3{
+        top: 0;
+        width: 100%;
+    }
+    .nav-level--2,
+    .nav-level--3{
+        position: absolute;
+        opacity: 0;
+        left: -9999px;
+        background: mix( white, $primary_color, 10% );
+        transition: .4s opacity linear;
+        a{
+            color: white;
+            text-align: left;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+    .nav-item--1,
+    .nav-item--2,
+    .nav-item--3{
+        transition: .1s all linear;
+        &:hover{
+            background: mix( white, $primary_color, 30% );
+        }
+    }
+    .nav-item--1{
+        position: relative;
+        width: calc( 100% / 12 );
+        margin: 0 1em;
+        &.has-children:after{
+            content: "\f0d7";
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        &:hover{
+            a{
+                color: white;
+            }
+            .nav-level--2{
+                left: 0;
+                opacity: 1;
+            }
+        }
+    }
+    .nav-item--2{
+        position: relative;
+        &.has-children:after{
+            content: "\f0da";
+            right: 0;
+            top: 10px;
+            width: 20px;
+        }
+        &:hover{
+            .nav-level--3{
+                left: 100%;
+                opacity: 1;
+            }
+        }
+    }
+    .site-actions{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        text-align: left;
+        z-index: 2;
+        overflow: hidden;
+        width: 2em;
+        a{
+            position: absolute;
+            right: -130px;
+            height: 50%;
+            margin: 0;
+            width: 150px;
+            padding: 2px 6px;
+            display: block;
+            transition: .2s all linear;
+            &:nth-child(2){
+                top: 50%;
+            }
+            &:hover{
+                background: tint( $primary_color, 30% );
+                color: white;
+                right: 0;
+            }
+            i{
+                padding-right: 10px;
+            }
+        }
+    }
+}

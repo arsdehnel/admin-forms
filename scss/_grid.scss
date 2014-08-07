@@ -1,0 +1,26 @@
+.layout-grid{
+    .row{
+        display: flex;
+        flex-flow: row wrap;
+    }
+    *[class*=layout-grid]{
+        margin: .5em;
+        &.grid-inner-pad{
+            padding: 1em;
+        }
+    }
+    fieldset[class*=layout-grid].layout-grid-inner-pad{
+        padding: 3em 1em 1em;
+    }
+    @for $i from 1 through 12{
+        .layout-grid-#{$i}{
+            flex: $i;
+        }
+    }
+}
+
+.layout-grid-zebra{
+    .row:nth-child(odd){
+        background: #ddd;
+    }
+}

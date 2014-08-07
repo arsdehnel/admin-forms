@@ -1,0 +1,37 @@
+<?php
+	sleep(1);
+?>
+{
+"columns" : [
+      {
+        "name" : "job_group",
+        "label" : "Job Group",
+        "wrapClass" : "onselect-dependency-show",
+        "inputClass" : "submit-on-change",
+        "readonly" : false,
+        "jsHooks" : [
+            {
+                "hook" : "submit-on-change",
+                "value" : "parent-form"
+            }
+        ],
+        "type" : "select2",
+        "data" : [
+          {
+            "value" : "VIN_DTL",
+            "label" : "VIN Detail"
+          },
+          {
+            "value" : "DATA_DTL",
+            "label" : "Data Detail",
+            "helpText" : "This is some help text"
+          },
+          {
+            "value" : "DATA_CALC",
+            "label" : "Data Calcs"
+          }
+        ]
+      }
+    ]
+
+}

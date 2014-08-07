@@ -1,0 +1,103 @@
+fieldset{
+  border: 1px solid tint( $primary_color, 70% );
+  box-shadow: 2px 2px 6px tint( $primary_color, 50% );
+  position: relative;
+  padding: 2em .5em .5em;
+  legend{
+    position: relative;
+    top: 1em;
+    display: block;
+    height: 2em;
+    width: calc( 100% + 1em );
+    margin: 0 -.5em;
+    padding: .25em;
+    background: tint( $primary_color, 60% );
+    color: $primary_color;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+.form-horizontal{
+  width: 100%;
+  .form-row{
+    label{
+      text-align: right;
+      line-height: 1.5em;
+    }
+    .form-input{
+      display: flex;
+      height: 2em;
+      flex-flow: row wrap;
+      .form-input-field,
+      .form-input-addon{
+        border: 1px solid hsla(31, 15%, 50%, 0.75);
+        line-height: 2em;
+        &:first-child {
+          border-radius: 2px 0 0 2px;
+        }
+        &:last-child {
+          border-radius: 0 2px 2px 0;
+        }
+        &:only-child {
+        	border-radius: 2px;
+        }
+      }
+      .form-input-field{
+        flex: 1;
+        margin: 0;
+        &:not(:first-child) {
+          border-left: 0;
+        }
+      }
+      .form-input-addon{
+        padding: 0 .75em;
+        background-color: hsla(31, 15%, 50%, 0.1);
+        color: hsl(0, 0%, 40%);
+        font-size: .9em;
+      }
+    }
+  }
+}
+
+.btn{
+	text-transform: uppercase;
+    box-shadow: inset 0 1px 0 0 #bbb;
+    color: white;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 100;
+    text-shadow: 1px 1px 5px #333;
+    @include linear-gradient( #999, #666 );
+    padding: 3px 8px;
+    text-decoration: none;
+    font-family: "FontAwesome";
+    margin: 0;
+    border: solid #444;
+    border-width: 1px 1px 1px 0;
+    &.action-save{
+      @include linear-gradient( #0c0, #060 );
+    }
+    &.action-inactivate{
+      @include linear-gradient( #f00, #700 );
+    }
+    &:first-child{
+      border-radius: 2px 0 0 2px;
+      border-left-width: 1px;
+    }
+    &:last-child{
+      border-radius: 0 2px 2px 0;
+    }
+    &:only-child {
+    	border-radius: 2px;
+    }
+    &:hover{
+    	@include linear-gradient( #666, #999 );
+    	color: #ccc;
+    }
+}
+
+select {
+	font-size: 13px;
+	border: 0;
+}

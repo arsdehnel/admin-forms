@@ -1,0 +1,60 @@
+<?php
+    $header_text = 'Reporting Data Calculations';
+    $main_classes[] = 'layout-grid';
+    include('_header.php');
+?>
+<div class="row auto-admin-onload-ajax" data-onload-ajax-url="json/report-data-calc-promotions.json" data-onload-ajax-result-type="form" data-onload-ajax-target-id="report-data-calcs-form">
+    <div class="layout-grid-3"></div>
+    <fieldset class="layout-grid-6">
+        <legend>Select Your Promotion</legend>
+        <form action="json/report-data-calc-grid.json" class="form-horizontal submit-on-change" method="post" id="report-data-calcs-form" data-target-id="report-data-calcs-grid" data-result-type="grid"></form>
+    </fieldset>
+    <div class="layout-grid-3"></div>
+</div>
+
+<div id="report-data-calcs-grid"></div>
+
+<?php
+    $todo = [];
+    // $todo[] = ["",""];
+    $todo[] = ["pending","error handling"];
+    $todo[] = ["pending","data feed"];
+    $todo[] = ["pending","save function"];
+    $todo[] = ["pending","revert function"];
+    $todo[] = ["pending","inactivate function"];
+    $todo[] = ["done","submit on promotion select"];
+    $todo[] = ["pending","sortable columns"];
+    $todo[] = ["pending","filterable columns"];
+    $todo[] = ["done","click away event for dropdowns"];
+    $todo[] = ["pending","lookup ctrl overlay"];
+    $todo[] = ["pending","clone option (with modal confirmation of detail records coming with or not)"];
+    $todo[] = ["done","allow clear on select2"];
+    $todo[] = ["pending","spinner everything"];
+    $todo[] = ["done","make select2 icons use fontawesome"];
+    $todo[] = ["pending","page unload check"];
+    $todo[] = ["pending","style processing class"];
+    $todo[] = ["pending","modal for _add x records_ action"];
+    $todo[] = ["pending","uncomment the first filter field focus bit"];
+    $todo[] = ["pending","save column data into localStorage"];
+    $todo[] = ["done","column group selectors"];
+    $todo[] = ["pending","special styling for optional columns"];
+    $todo[] = ["done","drag'n'drop file processing that generates new records with added class"];
+    $todo[] = ["pending","on the fly addition of entries as an option for some select2 fields"];
+    $todo[] = ["pending","listen to array for messages rather than explicitly calling every time"];
+    $todo[] = ["pending","clone multiple times"];
+    $todo[] = ["pending","recheck filters on renderRecord"];
+    $todo[] = ["done","have way to break cache of templates"];
+    $todo[] = ["done","check to see if the html fields have already been added to the columns array before trying to add them again"];
+    $todo[] = ["done","column picker"];
+    $todo[] = ["done","default column picker values based on media query results"];
+    $todo[] = ["done","select2"];
+    $todo[] = ["done","promotion picker"];
+    $todo[] = ["done","only get FIRST filter field for the _focus_ stuff"];
+    $todo[] = ["done","tool tip"];
+    $todo[] = ["done","add multiple rows at once"];
+    $todo[] = ["done","uncomment the opacity setting for column picker checkboxes"];
+    $todo[] = ["done","templates from external files"];
+    $todo[] = ["done","templates into local storage"];
+
+    include('_footer.php');
+?>

@@ -1,0 +1,5 @@
+<select name="{{name}}" class="auto-admin-grid-filter-value" {{#if readonly}}readonly{{/if}}>
+    {{#each data}}
+		<option value="{{this.value}}" {{optionSelected value ../currentValue}}>{{this.label}}</option>
+    {{/each}}
+</select>

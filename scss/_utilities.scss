@@ -1,0 +1,32 @@
+.body-overlay{
+    //background: rgba( 255, 255, 255, .7 );
+    background: tint( rgba( $primary_color, .7 ), 20% );
+    z-index: $zindex-overlay-bg;
+}
+.body-overlay,
+.page-spin{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+.hide{
+    display: none !important;
+}
+.loading{
+	min-height: 10em;
+}
+
+.to-do{
+  .done{
+    color: #ccc;
+    text-decoration: line-through;
+  }
+  .ready-for-server{
+    color: #ccc;
+  }
+}

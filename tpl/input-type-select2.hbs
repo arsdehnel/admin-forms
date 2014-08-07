@@ -1,0 +1,8 @@
+  <select class="select2 form-input-field auto-admin-grid-filter-value {{inputClass}}" name="{{name}}" {{#if readonly}}readonly{{/if}} {{#if multiple}}multiple{{/if}}>
+    {{#unless required}}
+      <option></option>
+    {{/unless}}
+    {{#each data}}
+      <option value="{{this.value}}" {{#if helpText}} data-help-text="{{helpText}}" {{/if}} {{optionSelected value ../currentValue}}>{{#if this.label}}{{this.label}}{{else}}{{this.value}}{{/if}}</option>
+    {{/each}}
+  </select><!-- /.select2 -->

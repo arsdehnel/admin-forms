@@ -1,0 +1,29 @@
+.tooltip{
+    display: none;
+    position: absolute;
+    bottom: 105%;
+    opacity: 0;
+    padding: 1em;
+    background: rgba( 255,255,255, .9);
+    box-shadow: 0 0 8px 1px $primary_color;
+    border-radius: 2px;
+    transition: .2s opacity linear;
+    width: 200px;
+    z-index: $zindex-tooltip;
+    color: black;
+    text-align: left;
+}
+.icon-tooltip{
+    &:before{
+    	content: "\f059";
+    	display: inline-block;
+    }
+    &:hover{
+    	color: tint( $primary_color, 50% );
+    	cursor: help;
+        .tooltip{
+            display: block;
+            opacity: 1;
+        }
+    }
+}

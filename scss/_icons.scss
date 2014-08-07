@@ -1,0 +1,54 @@
+.icon:before{
+	display: inline-block;
+	margin-right: 4px;
+	font-family: 'FontAwesome';
+	font-style: normal;
+}
+
+.icon-save:before{
+	content: '\f0c7';
+}
+.icon-edit:before{
+	content: '\f040';
+}
+.icon-run:before{
+	content: '\f0e2';
+}
+.icon-inactivate:before{
+	content: '\f014';
+}
+.icon-help:before,
+.icon-tooltip:before{
+	content: '\f128';
+}
+.icon-search:before{
+	content: '\f002';
+}
+.icon-clone:before{
+	content: '\f0c5';
+}
+.icon-revert:before{
+	content: '\f0e2';
+}
+.icon-filter:before{
+	content: "\f0d7";
+}
+.icon-filter-on:before{
+	content: '\f0b0';
+}
+.icon-add:before{
+	content: '\f067';
+}
+.icon-sort:before{
+	content: '\f0dc';
+}
+.icon-sort-asc:before{
+	content: '\f0de';
+}
+.icon-sort-desc:before{
+	content: '\f0dd';
+}
+.icon-go:before,
+.icon-query:before{
+	content: '\f04b';
+}

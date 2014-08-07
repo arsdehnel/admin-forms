@@ -1,0 +1,81 @@
+@mixin breakpoint($point) {
+  @if $point == papa-bear {
+    @media (min-width: 1500px) { @content; }
+  }
+  @else if $point == mama-bear {
+    @media (min-width: 1201px) { @content; }
+  }
+  @else if $point == baby-bear {
+    //only used for explicity excluding things from the small screen
+    //since the styles should be mostly small-screen-first
+    @media (min-width: 801px)  { @content; }
+  }
+}
+
+@mixin linear-gradient( $from, $to ){
+    background: linear-gradient(to bottom, $from 0%, $to 100%);
+}
+
+// Add percentage of white to a color
+@function tint($color, $percent){
+  @return mix(white, $color, $percent);
+}
+
+// Add percentage of black to a color
+@function shade($color, $percent){
+  @return mix(black, $color, $percent);
+}
+
+
+@mixin dropdown(){
+  position: absolute;
+  z-index: 9999;
+  background: #eee;
+  box-shadow: 0 0 12px #999;
+  border: 1px solid #555;
+  border-radius: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  li{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    &.divider{
+      border-bottom: 1px solid #555;
+    }
+  }
+  input{
+    position: absolute;
+    top: 0;
+    left: -100%;
+    opacity: 0;
+  }
+  a, label{
+    cursor: pointer;
+    display: block;
+    padding: .25em 1em;
+    color: #555;
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 2em;
+    text-decoration: none;
+    &:hover{
+      background: #555;
+      color: white;
+    }
+  }
+  :checked + label:before{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: 8px;
+    left: 4px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent transparent transparent currentColor;
+  }
+}

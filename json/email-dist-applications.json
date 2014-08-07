@@ -1,0 +1,51 @@
+<?php
+	sleep(1);
+?>
+{
+    "columns" : [
+      {
+        "name" : "application",
+        "label" : "Application",
+        "type" : "select2",
+        "data" : [
+          {
+            "value" : "CORE",
+            "label" : "Core System"
+          },
+          {
+            "value" : "N10",
+            "label" : "Nissan 10"
+          }
+        ]
+      },
+      {
+        "name" : "actions",
+        "label" : "",
+        "cellClass" : "auto-admin-cell-actions",
+        "type" : "actions",
+        "data" : [
+        	{
+	            "href" : "#",
+	            "type" : "query",
+	            "label" : "Query"
+        	},
+          	{
+	            "href" : "html/job-submission-run.html",
+	            "type" : "add",
+	            "label" : "Add",
+	            "actionClass" : "load-on-click",
+		        "dataAttributes" : [
+		            {
+		                "name" : "load-on-click-target-id",
+		                "value" : "job-submission-grid"
+		            },
+		            {
+		                "name" : "result-type",
+		                "value" : "html"
+		            }
+		        ]
+          	}
+        ]
+      }
+    ]
+}

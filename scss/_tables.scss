@@ -1,0 +1,22 @@
+table{
+    border-collapse: collapse;
+    width: calc( 100% - 2em );
+    margin: 0 auto;
+    border: solid tint( $primary_color, 50% );
+    border-width: 1px 0 0 1px;
+    thead{
+        th{
+            background: $primary_color;
+            color: white;
+            position: relative;
+            padding: .75em .5em;
+        }
+    }
+    td,
+    th{
+    	text-align: center;
+        padding: 5px 3px;
+        border: solid tint( $primary_color, 50% );
+        border-width: 0 1px 1px 0;
+    }
+}

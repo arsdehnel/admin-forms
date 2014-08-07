@@ -1,0 +1,93 @@
+<?php
+    $header_text = 'Job Submission';
+    $main_classes[] = 'grid';
+    include('_header.php');
+?>
+    <div class="row">
+        <div class="grid-3"></div>
+        <fieldset class="grid-6">
+            <legend>Find Your Job</legend>
+            <form action="json/job-submission.json" class="form-horizontal" method="post" id="job-submission"></form>
+        </fieldset>
+        <div class="grid-3"></div>
+    </div>
+  <div id="job-submission-grid" class="hide"></div>
+  <input type="hidden" name="page_load_form_elements" id="page-load-form-elements" value='{
+    "targetForm" : "job-submission",
+    "fields" : [
+      {
+        "name" : "job_group",
+        "label" : "Job Group",
+        "wrapClass" : "onselect-dependency-show",
+        "jsHooks" : [
+            {
+                "hook" : "lookup-on-change",
+                "type" : "select2-data-lkup"
+            }
+        ],
+        "dataAttributes" : [
+            {
+                "name" : "lookup-on-change-target-id",
+                "value" : "prcs_name"
+            }
+        ],
+        "type" : "select2",
+        "data" : [
+          {
+            "value" : "VIN_DTL",
+            "label" : "VIN Detail"
+          },
+          {
+            "value" : "DATA_DTL",
+            "label" : "Data Detail",
+            "helpText" : "This is some help text"
+          },
+          {
+            "value" : "DATA_CALC",
+            "label" : "Data Calcs"
+          }
+        ]
+      },
+      {
+        "name" : "prcs_name",
+        "wrapId" : "prcs_name",
+        "label" : "Process",
+        "wrapClass" : "hide",
+        "jsHooks" : [
+            {
+                "hook" : "lookup-on-change",
+                "type" : "html-lookup"
+            }
+        ],
+        "dataAttributes" : [
+            {
+                "name" : "lookup-on-change-url",
+                "value" : "json/job-submit-processes.json"
+            },
+            {
+                "name" : "lookup-on-change-target-id",
+                "value" : "job-submission-grid"
+            }
+        ],
+        "type" : "select2",
+        "data" : [
+          {
+            "value" : "VIN_DTL",
+            "label" : "VIN Detail"
+          },
+          {
+            "value" : "DATA_DTL",
+            "label" : "Data Detail",
+            "helpText" : "This is some help text"
+          },
+          {
+            "value" : "DATA_CALC",
+            "label" : "Data Calcs"
+          }
+        ]
+      }
+    ]
+}'>
+<?php
+    include('_footer.php');
+?>

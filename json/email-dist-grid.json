@@ -1,0 +1,289 @@
+<?php
+	sleep(1);
+?>
+{
+    "columns" : [
+      {
+        "name" : "id",
+        "label" : "ID",
+        "tooltip" : "This is just the eml_dist_mstr_id and is mostly here just for reference",
+        "columnSelectPriority" : "3",
+        "type" : "readonly"
+      },
+      {
+        "name" : "application",
+        "label" : "Application",
+        "tooltip" : "From your TA, the part of the system that the process falls into.",
+        "columnSelectPriority" : "1",
+        "type" : "select2",
+        "data" : [
+          {
+            "value" : "CORE",
+            "label" : "Core"
+          },
+          {
+            "value" : "N10",
+            "label" : "Nissan 10"
+          },
+          {
+            "value" : "TOE",
+            "label" : "Total Ownership Experience"
+          }
+        ]
+      },
+      {
+        "name" : "prcs_name",
+        "label" : "Process",
+        "tooltip" : "This is a technicsl-team-defined code that represents the process in the database.",
+        "columnSelectPriority" : "1",
+        "type" : "select2",
+        "data" : [
+          {
+            "value" : "N10.BATCH_RPTNG_CTRL"
+          },
+          {
+            "value" : "N10.MOVE_TO_WEB"
+          },
+          {
+            "value" : "N10.VIN_ACCUM"
+          }
+        ]
+      },
+      {
+        "name" : "msg_type",
+        "label" : "Message Type",
+        "tooltip" : "Sometimes processes can have different distributions for ERROR or SUCCESS messages but sometimes it's also just COMPLETE or some (very limited) processes have several different message types.  If you're not sure then check with your TA.",
+        "columnSelectPriority" : "1",
+        "type" : "select2",
+        "data" : [
+          {
+            "value" : "ERROR"
+          },
+          {
+            "value" : "SUCCESS"
+          },
+          {
+            "value" : "COMPLETE"
+          },
+          {
+            "value" : "CORE"
+          },
+          {
+            "value" : "TOE"
+          }
+        ]
+      },
+      {
+        "name" : "from_addr",
+        "label" : "From Address",
+        "columnSelectPriority" : "1",
+        "type" : "email"
+      },
+      {
+        "name" : "subject",
+        "label" : "Subject",
+        "columnSelectPriority" : "1",
+        "type" : "text"
+      },
+      {
+        "name" : "recipients",
+        "label" : "Recipients",
+        "columnSelectPriority" : "1",
+        "type" : "select2",
+        "multiple" : true,
+        "data" : [
+          {
+            "value" : "123",
+            "label" : "Adam Dehnel"
+          },
+          {
+            "value" : "456",
+            "label" : "Karen Lahn"
+          },
+          {
+            "value" : "789",
+            "label" : "Matt Golden"
+          }
+        ]
+      },
+      {
+        "name" : "status_code",
+        "label" : "Status Code",
+        "columnSelectPriority" : "1",
+        "type" : "select",
+        "data" : [
+          {
+            "value" : "A",
+            "label" : "Active"
+          },
+          {
+            "value" : "I",
+            "label" : "Inactive"
+          }
+        ]
+      },
+      {
+        "name" : "comments",
+        "label" : "Comments",
+        "tooltip" : "Just for reference by you and other team members, this will not be used in any programming or display on the web.",
+        "columnSelectPriority" : "4",
+        "type" : "textarea"
+      },
+      {
+        "name" : "actions",
+        "label" : "Actions",
+        "cellClass" : "auto-admin-cell-actions",
+        "tooltip" : "This is the name of what we're actually doing (summing, dividing, multiplying, etc.) once we have all the values and we've determined we need to do this data type for this period and whatnot.",
+        "columnSelectPriority" : "0",
+        "type" : "actions",
+        "data" : [
+          {
+            "href" : "#",
+            "type" : "save",
+            "label" : "Save"
+          },
+          {
+            "href" : "#",
+            "type" : "clone",
+            "label" : "Clone"
+          },
+          {
+            "href" : "#",
+            "type" : "revert",
+            "label" : "Revert"
+          },
+          {
+            "href" : "#",
+            "type" : "inactivate",
+            "label" : "inactivate"
+          }
+        ]
+      }
+    ],
+    "records" : [
+      {
+        "id" : 13,
+        "application" : "CORE",
+        "prcs_name" : "N10.MOVE_TO_WEB",
+        "msg_type" : "SUCCESS",
+        "from_addr" : "adam.dehnel@biworldwide.com",
+        "subject" : "The move to web worked",
+        "status_code" : "I",
+        "recipients" : [
+        	"123",
+        	"456"
+        ],
+        "comments" : "Yay comments"
+      },
+      {
+        "id" : 14,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "RECOG_RPTNG_DATA",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 15,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "SA_ATTNMT_AWD_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 16,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 17,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 18,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 19,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      }
+
+    ],
+    "gridActions" : [
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 1 Record",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "1"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 2 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "2"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 3 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "3"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 4 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "4"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 5 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "5"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 10 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "10"
+	            }
+	        ]
+		}    ]
+}

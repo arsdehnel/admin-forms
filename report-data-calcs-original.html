@@ -1,0 +1,112 @@
+<?php
+    $header_text = 'Reporting Data Calculations';
+    $main_classes[] = 'layout-grid';
+    include('_header.php');
+?>
+    <div class="auto-admin-filters">
+      <form action="json/data.json" method="post">
+        <div class="filter">
+          <label for="promotion_id">Promotion</label>
+          <select name="promotion_id" id="promotion_id" class="select2">
+            <option value="3117">3117: Nissan 10</option>
+            <option value="2199">2199: Nissan 10</option>
+          </select>
+        </div>
+        <div class="filter-actions">
+          <button type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="auto-admin-column-select auto-admin-grid-dropdown-wrapper">
+      <div class="grid-action grid-dropdown">
+        <button type="button" class="dropdown-toggle dropdown-label">Default Columns</button>
+        <button type="button" class="dropdown-toggle-caret dropdown-toggle">
+          <span class="caret">&#xf0d7;</span>
+        </button>
+        <ul class="dropdown-menu hide">
+          <li class="divider"></li>
+          <li><a href="#" class="auto-admin-grid-column-group">All Columns</a></li>
+          <li><a href="#" class="auto-admin-grid-column-group">Minimum Columns</a></li>
+          <li><a href="#" class="auto-admin-grid-column-group">Default Columns</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="auto-admin-grid" data-column-lkup-url="json/columns.json">
+      <thead>
+        <tr>
+          <!--
+          <th data-column-select-priority="1">Period Code(s)</th>
+          <th data-column-select-priority="1">Data Lkup Ctrl(s)</th>
+          -->
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+    <div class="auto-admin-grid-dropdown-wrapper">
+      <div class="grid-action grid-dropdown">
+        <button type="button" class="auto-admin-grid-record-add" data-record-count="1">Add 1 Record</button>
+        <button type="button" class="dropdown-toggle-caret dropdown-toggle" >
+          <span class="caret">&#xf0d7;</span>
+        </button>
+        <ul class="dropdown-menu hide">
+          <li><a href="#" class="auto-admin-grid-record-add" data-record-count="2">Add 2 Record</a></li>
+          <li><a href="#" class="auto-admin-grid-record-add" data-record-count="3">Add 3 Records</a></li>
+          <li><a href="#" class="auto-admin-grid-record-add" data-record-count="4">Add 4 Records</a></li>
+          <li><a href="#" class="auto-admin-grid-record-add" data-record-count="5">Add 5 Records</a></li>
+          <li><a href="#" class="auto-admin-grid-record-add" data-record-count="10">Add 10 Records</a></li>
+          <li class="divider"></li>
+          <li><a href="#" class="auto-admin-grid-record-add">Add X Records</a></li>
+        </ul>
+      </div>
+    </div>
+
+<ul class="to-do">
+  <li>submit on promotion select</li>
+  <li>sortable columns</li>
+  <li>filterable columns</li>
+  <li>click away event for dropdowns</li>
+  <li>lookup ctrl overlay</li>
+  <li>clone option (with modal confirmation of detail records coming with or not)</li>
+  <li>allow clear on select2</li>
+  <li>spinner everything</li>
+  <li>make select2 icons use fontawesome</li>
+  <li>page unload check</li>
+  <li>style processing class</li>
+  <li>modal for "add x records" action</li>
+  <li>uncomment the first filter field focus bit</li>
+  <li>save column data into localStorage</li>
+  <li>column group selectors</li>
+  <li>special styling for optional columns</li>
+  <li>drag'n'drop file processing that generates new records with added class</li>
+  <li>on the fly addition of entries as an option for some select2 fields</li>
+  <li>listen to array for messages rather than explicitly calling every time</li>
+  <li>clone multiple times</li>
+  <li>recheck filters on renderRecord</li>
+  <li>have way to break cache of templates</li>
+  <li class="ready-for-server">error handling</li>
+  <li class="ready-for-server">data feed</li>
+  <li class="ready-for-server">save function</li>
+  <li class="ready-for-server">revert function</li>
+  <li class="ready-for-server">inactivate function</li>
+  <li class="done">check to see if the html fields have already been added to the columns array before trying to add them again</li>
+  <li class="done">column picker</li>
+  <li class="done">default column picker values based on media query results</li>
+  <li class="done">select2</li>
+  <li class="done">promotion picker</li>
+  <li class="done">only get FIRST filter field for the "focus" stuff</li>
+  <li class="done">tool tip</li>
+  <li class="done">add multiple rows at once</li>
+  <li class="done">uncomment the opacity setting for column picker checkboxes</li>
+  <li class="done">templates from external files</li>
+  <li class="done">templates into local storage</li>
+</ul>
+<script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/2.0.1/spin.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+<script src="js/adminGrid.min.js"></script>
+</body>
+</html>

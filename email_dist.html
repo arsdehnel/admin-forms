@@ -1,0 +1,23 @@
+<?php
+    $header_text = 'Email Distribution Lists';
+    $main_classes[] = 'layout-grid';
+    include('_header.php');
+?>
+<div class="row auto-admin-onload-ajax" data-onload-ajax-url="json/email-dist-applications.json" data-onload-ajax-result-type="form" data-onload-ajax-target-id="email-dist-form">
+    <div class="layout-grid-3"></div>
+    <fieldset class="layout-grid-6">
+        <legend>Find Your Email List</legend>
+        <form action="json/email-dist-grid.json" class="form-horizontal submit-on-change" method="post" id="email-dist-form" data-target-id="email-dist-grid" data-result-type="grid"></form>
+    </fieldset>
+    <div class="layout-grid-3"></div>
+</div>
+
+<div id="email-dist-grid"></div>
+
+<?php
+    $todo = [];
+    // $todo[] = ["",""];
+    //$todo[] = ["pending","error handling"];
+
+    include('_footer.php');
+?>

@@ -1,0 +1,31 @@
+<?php
+    $header_text = 'Job Submission';
+    $main_classes[] = 'layout-grid';
+    include('_header.php');
+?>
+	<div class="row auto-admin-onload-ajax" data-onload-ajax-url="json/job-submission-groups.json" data-onload-ajax-result-type="form" data-onload-ajax-target-id="job-submission">
+        <div class="layout-grid-3"></div>
+        <fieldset class="layout-grid-6">
+            <legend>Find Your Job</legend>
+            <form action="json/job-submission-processes.json" class="form-horizontal" method="post" id="job-submission" data-target-id="job-submission-grid" data-result-type="grid"></form>
+        </fieldset>
+        <div class="layout-grid-3"></div>
+    </div>
+  <div id="job-submission-grid" class="hide"></div>
+
+<?php
+    $todo = [];
+    // $todo[] = ["",""];
+    $todo[] = ["pending","user can add group from select2 input"];
+    $todo[] = ["done","page loads with empty job-submission-grid"];
+    $todo[] = ["done","on change of input the form submits and triggers the job-submission-grid to load up with the resulting grid"];
+    $todo[] = ["done","actions for each row dependent on user"];
+    $todo[] = ["done","user can _run_ from results which will load up new job-submission-grid with 3 panels"];
+    $todo[] = ["pending","breadcrumbs back to grid listing from run panels"];
+    $todo[] = ["pending","user can _edit_ right within the grid by enabling edit mode using an action (if they are allowed)"];
+    $todo[] = ["pending","whole page covered by spinner when job is submitted"];
+    $todo[] = ["pending","results post to result panel and append to history grid"];
+    $todo[] = ["pending","history grid filterable, sortable and defaults to just the last 10 submissions"];
+
+    include('_footer.php');
+?>

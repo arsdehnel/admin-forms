@@ -1,0 +1,27 @@
+<div class="{{wrapClass}} dropdown-wrapper">
+  	<div class="grid-action grid-dropdown dropdown-inner">
+    	<button type="button" class="dropdown-toggle dropdown-label">{{buttonLabel}}</button>
+    	<button type="button" class="dropdown-toggle-caret dropdown-toggle">
+      		<span class="caret">&#xf0d7;</span>
+    	</button>
+    	<ul class="dropdown-menu hide">
+      		{{#each defaultActions}}
+				<li><a href="{{href}}" class="{{itemClass}}">{{{label}}}</a></li>
+      		{{/each}}
+      		<li class="divider"></li>
+      		{{#each footerOptions}}
+				<li>
+					<a
+						href="{{href}}"
+						class="{{itemClass}}"
+					    {{#each dataAttributes}}
+					        data-{{name}}="{{value}}"
+					    {{/each}}
+						>
+						{{{label}}}
+					</a>
+				</li>
+      		{{/each}}
+    	</ul>
+  	</div>
+</div>

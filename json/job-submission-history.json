@@ -1,0 +1,98 @@
+<?php
+	sleep(1);
+?>
+{
+    "columns" : [
+      {
+        "name" : "id",
+        "label" : "ID",
+        "columnSelectPriority" : "3",
+        "type" : "readonly",
+        "readonly" : true
+      },
+      {
+        "name" : "in_parms",
+        "label" : "In Parms",
+        "tooltip" : "Pipe-delimited string of the input parameters used for this run of the job",
+        "columnSelectPriority" : "1",
+        "type" : "readonly",
+        "readonly" : true
+      },
+      {
+        "name" : "out_parms",
+        "label" : "Out Parms",
+        "tooltip" : "Pipe-delimited string of the out parameters (ie results) for this run of the job",
+        "columnSelectPriority" : "1",
+        "type" : "readonly",
+        "readonly" : true
+      },
+      {
+        "name" : "end_timestamp",
+        "label" : "End Timestamp",
+        "tooltip" : "The timestamp of when this run of the job completed.",
+        "columnSelectPriority" : "1",
+        "type" : "readonly",
+        "readonly" : true
+      },
+      {
+        "name" : "username",
+        "label" : "Username",
+        "tooltip" : "The LDAP username of the person that ran the job",
+        "columnSelectPriority" : "1",
+        "type" : "readonly",
+        "readonly" : true
+      }
+    ],
+    "records" : [
+      {
+        "id" : 13,
+        "in_parms" : "VIN_DTL",
+        "out_parms" : "13",
+        "end_timestamp" : "PMA_AWD_CALC_05",
+        "username" : "SUM"
+      },
+      {
+        "id" : 14,
+        "in_parms" : "DATA_DTL",
+        "out_parms" : 14,
+        "end_timestamp" : "PMA_AWD_CALC_05",
+        "username" : "DIVIDE"
+      },
+      {
+        "id" : 15,
+        "in_parms" : "DATA_DTL",
+        "out_parms" : "15",
+        "end_timestamp" : "SA_ATTNMT_AWD_05",
+        "username" : "DIVIDE"
+      },
+      {
+        "id" : 16,
+        "in_parms" : "DATA_DTL",
+        "out_parms" : "16",
+        "end_timestamp" : "PMA_AWD_CALC_05",
+        "username" : "DIVIDE"
+      },
+      {
+        "id" : 17,
+        "in_parms" : "DATA_DTL",
+        "out_parms" : "17",
+        "end_timestamp" : "PMA_AWD_CALC_05",
+        "username" : "DIVIDE"
+      },
+      {
+        "id" : 18,
+        "in_parms" : "DATA_DTL",
+        "out_parms" : "18",
+        "end_timestamp" : "PMA_AWD_CALC_05",
+        "username" : "DIVIDE"
+      },
+      {
+        "id" : 19,
+        "in_parms" : "DATA_DTL",
+        "out_parms" : "19",
+        "end_timestamp" : "PMA_AWD_CALC_05",
+        "username" : "DIVIDE"
+      }
+
+    ]
+}

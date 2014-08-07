@@ -1,0 +1,83 @@
+<?php
+	sleep(1);
+?>
+{
+    "columns" : [
+      {
+        "name" : "promotion_id",
+        "label" : "Promotion",
+        "type" : "select2",
+        "data" : [
+          {
+            "value" : "3117",
+            "label" : "Nissan 10 Sales Growth Program"
+          },
+          {
+            "value" : "7619",
+            "label" : "Career Builders"
+          }
+        ]
+      },
+      {
+        "name" : "promotion_id",
+        "label" : "Promotion",
+        "type" : "text",
+        "tooltip" : "This is a special promotion",
+        "data" : [
+          {
+            "value" : "3117",
+            "label" : "Nissan 10 Sales Growth Program"
+          },
+          {
+            "value" : "7619",
+            "label" : "Career Builders"
+          }
+        ]
+      },
+      {
+        "name" : "promotion_id",
+        "label" : "Promotion",
+        "type" : "text",
+        "html_prefix" : "This is a special promotion",
+        "data" : [
+          {
+            "value" : "3117",
+            "label" : "Nissan 10 Sales Growth Program"
+          },
+          {
+            "value" : "7619",
+            "label" : "Career Builders"
+          }
+        ]
+      },
+      {
+        "name" : "promotion_id",
+        "label" : "Promotion",
+        "type" : "text",
+        "html_suffix" : "This is a special promotion",
+        "data" : [
+          {
+            "value" : "3117",
+            "label" : "Nissan 10 Sales Growth Program"
+          },
+          {
+            "value" : "7619",
+            "label" : "Career Builders"
+          }
+        ]
+      },
+      {
+        "name" : "actions",
+        "label" : "",
+        "cellClass" : "auto-admin-cell-actions",
+        "type" : "actions",
+        "data" : [
+        	{
+	            "href" : "#",
+	            "type" : "submit",
+	            "label" : "Submit"
+        	}
+        ]
+      }
+    ]
+}

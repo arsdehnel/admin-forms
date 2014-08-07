@@ -1,0 +1,236 @@
+<?php
+	sleep(1);
+?>
+{
+    "columns" : [
+      {
+        "name" : "id2",
+        "label" : "ID",
+        "columnSelectPriority" : "3",
+        "type" : "readonly"
+      },
+      {
+        "name" : "relate_type",
+        "label" : "Relation",
+        "tooltip" : "This indicates how this record relates to the master and/or what it will be used for in the calculation processes.",
+        "columnSelectPriority" : "1",
+        "type" : "select2",
+        "data" : [
+          {
+            "value" : "VIN_DTL",
+            "label" : "VIN Detail"
+          },
+          {
+            "value" : "DATA_DTL",
+            "label" : "Data Detail",
+            "helpText" : "This is some help text"
+          },
+          {
+            "value" : "DATA_CALC",
+            "label" : "Data Calcs"
+          }
+        ]
+      },
+      {
+        "name" : "data_type",
+        "label" : "Data Type",
+        "columnSelectPriority" : "1",
+        "type" : "select2",
+        "data" : [
+          {
+            "value" : "CMN_DATA_SCE",
+            "label" : "Common Data Source"
+          },
+          {
+            "value" : "RECOG_RPTNG_DATA",
+            "label" : "Recog Reporting Data"
+          },
+          {
+            "value" : "AWD_CTRL_MSTR",
+            "label" : "Award Control Master"
+          }
+        ]
+      },
+      {
+        "name" : "status_code",
+        "label" : "Status Code",
+        "tooltip" : "Indicates whether this data type should be calculated right now or not.  Depending on the program the inactivation of this might cause the existing data to be removed whereas other programs might just leave that data as it is and simply will stop updating it.",
+        "columnSelectPriority" : "1",
+        "type" : "select",
+        "data" : [
+          {
+            "value" : "A",
+            "label" : "Active"
+          },
+          {
+            "value" : "I",
+            "label" : "Inactive"
+          }
+        ]
+      },
+      {
+        "name" : "read_order",
+        "label" : "Read Order",
+        "tooltip" : "This controls the order in which the data types are calculated.  For data types that rely on other data types to have already been calculated this can be very important.  For other data types that have no dependencies this is mostly irrelevant.  Items with the same read order will be sorted (basically) at random within that read order.",
+        "columnSelectPriority" : "3",
+        "type" : "number"
+      },
+      {
+        "name" : "comments",
+        "label" : "Comments",
+        "tooltip" : "Just for reference by you and other team members, this will not be used in any programming or display on the web.",
+        "columnSelectPriority" : "4",
+        "type" : "textarea"
+      },
+      {
+        "name" : "actions",
+        "label" : "Actions",
+        "cellClass" : "auto-admin-cell-actions",
+        "tooltip" : "This is the name of what we're actually doing (summing, dividing, multiplying, etc.) once we have all the values and we've determined we need to do this data type for this period and whatnot.",
+        "columnSelectPriority" : "0",
+        "type" : "actions",
+        "data" : [
+          {
+            "href" : "#",
+            "type" : "save",
+            "label" : "Save"
+          },
+          {
+            "href" : "#",
+            "type" : "clone",
+            "label" : "Clone"
+          },
+          {
+            "href" : "#",
+            "type" : "revert",
+            "label" : "Revert"
+          },
+          {
+            "href" : "#",
+            "type" : "inactivate",
+            "label" : "Inactivate"
+          }
+        ]
+      }
+    ],
+    "records" : [
+      {
+        "id" : 131,
+        "prcs_code" : "VIN_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "TTL_AWD_CALC_05",
+        "calc_operator" : "SUM",
+        "data_lkup_dtl" : "2 data types (PMA_AWD_CALC_05, SA_ATTNMT_AWD_05)"
+      },
+      {
+        "id" : 141,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "RECOG_RPTNG_DATA",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 151,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "SA_ATTNMT_AWD_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 161,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 171,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 181,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 191,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      }
+
+    ],
+    "gridActions" : [
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 1 Record",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "1"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 2 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "2"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 3 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "3"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 4 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "4"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 5 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "5"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 10 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "10"
+	            }
+	        ]
+		}    ]
+}

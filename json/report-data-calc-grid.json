@@ -1,0 +1,336 @@
+<?php
+	sleep(1);
+?>
+{
+    "columns" : [
+      {
+        "name" : "id",
+        "label" : "ID",
+        "tooltip" : "This is just the rptng_data_calc_id and is mostly here just for reference",
+        "columnSelectPriority" : "3",
+        "type" : "readonly"
+      },
+      {
+        "name" : "prcs_code",
+        "label" : "Process",
+        "tooltip" : "This indicates which process this data type is for as we will likely have multiple processes for a given program/application that use this same table",
+        "columnSelectPriority" : "1",
+        "type" : "select2",
+        "data" : [
+          {
+            "value" : "VIN_DTL",
+            "label" : "VIN Detail"
+          },
+          {
+            "value" : "DATA_DTL",
+            "label" : "Data Detail",
+            "helpText" : "This is some help text"
+          },
+          {
+            "value" : "DATA_CALC",
+            "label" : "Data Calcs"
+          }
+        ]
+      },
+      {
+        "name" : "data_sce",
+        "label" : "Data Source",
+        "tooltip" : "This is usually a table name that indicates where this data is coming from although sometimes it may be a partial name of a table, a table name with prefix/suffix or maybe something else entirely",
+        "columnSelectPriority" : "2",
+        "type" : "select2",
+        "data" : [
+          {
+            "value" : "CMN_DATA_SCE",
+            "label" : "Common Data Source"
+          },
+          {
+            "value" : "RECOG_RPTNG_DATA",
+            "label" : "Recog Reporting Data"
+          },
+          {
+            "value" : "AWD_CTRL_MSTR",
+            "label" : "Award Control Master"
+          }
+        ]
+      },
+      {
+        "name" : "data_type",
+        "label" : "Data Type",
+        "tooltip" : "This is the data type that all these other fields are controlling or indicating how it should be calculated.",
+        "columnSelectPriority" : "1",
+        "type" : "select2",
+        "data" : [
+          {
+            "value" : "PMA_AWD_05"
+          },
+          {
+            "value" : "PMA_AWD_CALC_05"
+          },
+          {
+            "value" : "SA_ATTNMT_AWD_05"
+          },
+          {
+            "value" : "TTL_AWD_CALC_05"
+          }
+        ]
+      },
+      {
+        "name" : "calc_operator",
+        "label" : "Calculation",
+        "tooltip" : "This is the name of what we're actually doing (summing, dividing, multiplying, etc.) once we have all the values and we've determined we need to do this data type for this period and whatnot.",
+        "columnSelectPriority" : "1",
+        "type" : "select2",
+        "data" : [
+          {
+            "value" : "SUM",
+            "label" : "Sum"
+          },
+          {
+            "value" : "DIVIDE",
+            "label" : "Divide"
+          },
+          {
+            "value" : "SA_ATTNMT_AWD_05",
+            "label" : "SA_ATTNMT_AWD_05"
+          }
+        ]
+      },
+      {
+        "name" : "data_lkup_dtl",
+        "label" : "Data Lookup",
+        "tooltip" : "This is a fancy-ass thing to allow users to enter all the details of their data lookup right here.",
+        "columnSelectPriority" : "1",
+        "type" : "data_lkup_dtl"
+      },
+      {
+        "name" : "dflt_val",
+        "label" : "Default Value",
+        "tooltip" : "If this is valued and whatever calculated is performed ends up with a null value then this will be used in stead.  Please note: this will NOT be used if the resulting value is a 0.",
+        "columnSelectPriority" : "3",
+        "type" : "text"
+      },
+      {
+        "name" : "rounding_type",
+        "label" : "Rounding Type",
+        "tooltip" : "Once the indicated calculation has been completed the resulting value (hopefully a number if you're going to round it) will be rounded as indicated by your choice here.",
+        "columnSelectPriority" : "3",
+        "type" : "select2",
+        "data" : [
+          {
+            "value" : "NORMAL",
+            "label" : "Normal Rounding",
+            "helpText" : "This is where .49999 and lower goes down, .5 and above rounds up."
+          },
+          {
+            "value" : "UP",
+            "label" : "Up"
+          },
+          {
+            "value" : "DOWN",
+            "label" : "Down"
+          },
+          {
+            "value" : "PCNT",
+            "label" : "As percentage",
+            "helpText" : "This actually will multiply the resulting value by 100 and then round to 2 decimals using normal rounding"
+          }
+        ]
+      },
+      {
+        "name" : "date_start",
+        "label" : "Start Date",
+        "tooltip" : "If valued this is compared to the system date when the process is run to see if this is a data type that should be calculated at this time.",
+        "columnSelectPriority" : "3",
+        "type" : "date"
+      },
+      {
+        "name" : "date_end",
+        "label" : "End Date",
+        "tooltip" : "If valued this is compared to the system date when the process is run to see if this is a data type that should be calculated at this time.",
+        "columnSelectPriority" : "3",
+        "type" : "date"
+      },
+      {
+        "name" : "status_code",
+        "label" : "Status Code",
+        "tooltip" : "Indicates whether this data type should be calculated right now or not.  Depending on the program the inactivation of this might cause the existing data to be removed whereas other programs might just leave that data as it is and simply will stop updating it.",
+        "columnSelectPriority" : "1",
+        "type" : "select",
+        "data" : [
+          {
+            "value" : "A",
+            "label" : "Active"
+          },
+          {
+            "value" : "I",
+            "label" : "Inactive"
+          }
+        ]
+      },
+      {
+        "name" : "read_order",
+        "label" : "Read Order",
+        "tooltip" : "This controls the order in which the data types are calculated.  For data types that rely on other data types to have already been calculated this can be very important.  For other data types that have no dependencies this is mostly irrelevant.  Items with the same read order will be sorted (basically) at random within that read order.",
+        "columnSelectPriority" : "3",
+        "type" : "number"
+      },
+      {
+        "name" : "comments",
+        "label" : "Comments",
+        "tooltip" : "Just for reference by you and other team members, this will not be used in any programming or display on the web.",
+        "columnSelectPriority" : "4",
+        "type" : "textarea"
+      },
+      {
+        "name" : "actions",
+        "label" : "Actions",
+        "cellClass" : "auto-admin-cell-actions",
+        "tooltip" : "This is the name of what we're actually doing (summing, dividing, multiplying, etc.) once we have all the values and we've determined we need to do this data type for this period and whatnot.",
+        "columnSelectPriority" : "0",
+        "type" : "actions",
+        "data" : [
+          {
+            "href" : "#",
+            "type" : "save",
+            "label" : "Save"
+          },
+          {
+            "href" : "#",
+            "type" : "clone",
+            "label" : "Clone"
+          },
+          {
+            "href" : "#",
+            "type" : "revert",
+            "label" : "Revert"
+          },
+          {
+            "href" : "#",
+            "type" : "inactivate",
+            "label" : "Inactivate"
+          }
+        ]
+      }
+    ],
+    "records" : [
+      {
+        "id" : 13,
+        "prcs_code" : "VIN_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "TTL_AWD_CALC_05",
+        "calc_operator" : "SUM",
+        "data_lkup_dtl" : "2 data types (PMA_AWD_CALC_05, SA_ATTNMT_AWD_05)"
+      },
+      {
+        "id" : 14,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "RECOG_RPTNG_DATA",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 15,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "SA_ATTNMT_AWD_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 16,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 17,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 18,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      },
+      {
+        "id" : 19,
+        "prcs_code" : "DATA_DTL",
+        "data_sce" : "CMN_DATA_SCE",
+        "data_type" : "PMA_AWD_CALC_05",
+        "calc_operator" : "DIVIDE"
+      }
+
+    ],
+    "gridActions" : [
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 1 Record",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "1"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 2 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "2"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 3 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "3"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 4 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "4"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 5 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "5"
+	            }
+	        ]
+		},
+    	{
+			"href" : "#",
+			"itemClass" : "auto-admin-grid-record-add",
+			"label" : "Add 10 Records",
+	        "dataAttributes" : [
+	            {
+	                "name" : "record-count",
+	                "value" : "10"
+	            }
+	        ]
+		}
+	]
+}
