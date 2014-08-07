@@ -1,0 +1,40 @@
+.dnd-item{
+  border: 1px solid tint( $primary_color, 70% );
+  box-shadow: 2px 2px 6px tint( $primary_color, 50% );
+  position: relative;
+  .dnd-handle{
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 2em;
+  	height: 2em;
+  	line-height: 2em;
+  	text-align: center;
+  	background: $primary-color;
+  	color: white;
+  	z-index: 20;
+  	cursor: move;
+  }
+  header{
+  	position: relative;
+    display: block;
+    height: 2em;
+    padding-left: 2.5em;
+    background: tint( $primary_color, 60% );
+    color: $primary_color;
+    font-weight: 700;
+    text-transform: uppercase;
+    p{
+    	margin: 0;
+    	line-height: 2em;
+    }
+    .dnd-details-toggle{
+		position: absolute;
+		top: .5em;
+		right: .5em;
+	  	border: 0;
+	  	background: transparent;
+	  	cursor: pointer;
+    }
+  }
+}
